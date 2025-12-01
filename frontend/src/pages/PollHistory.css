@@ -1,0 +1,146 @@
+/**
+ * Poll History Page Styles
+ */
+
+.poll-history-page {
+    min-height: 100vh;
+    padding: var(--space-xl);
+    background: var(--color-white);
+}
+
+.poll-history-container {
+    max-width: 900px;
+    width: 100%;
+    padding-left: 40px;
+}
+
+.poll-history-title {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: var(--space-xl);
+    color: var(--color-text-dark);
+}
+
+.view-text {
+    font-weight: var(--font-weight-regular);
+}
+
+.poll-history-bold {
+    font-weight: var(--font-weight-bold);
+}
+
+.history-poll-section {
+    margin-bottom: var(--space-xxl);
+}
+
+.history-question-number {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-lg);
+}
+
+.history-results-container {
+    border: 2px solid #E8E8E8;
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    max-width: 600px;
+    width: 100%;
+}
+
+.history-results-question-header {
+    background: #555555;
+    color: white;
+    padding: 18px 24px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.history-options-results-list {
+    background: white;
+    padding: 20px;
+}
+
+.history-option-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.history-option-bar:last-child {
+    margin-bottom: 0;
+}
+
+.history-option-progress-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border: 2px solid #E8E8E8;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 52px;
+    position: relative;
+    background: white;
+}
+
+.history-option-progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #876B95;
+    transition: width 0.4s ease;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+    z-index: 1;
+}
+
+.history-option-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+    width: 100%;
+}
+
+.history-results-option-number {
+    width: 28px;
+    height: 28px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #876B95;
+    flex-shrink: 0;
+}
+
+.history-option-name {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.history-option-content .history-option-name {
+    color: var(--color-text-dark);
+}
+
+.history-option-progress-fill .history-option-name {
+    color: white;
+}
+
+.history-option-percentage {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    min-width: 55px;
+    text-align: right;
+    flex-shrink: 0;
+}

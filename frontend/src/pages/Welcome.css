@@ -1,0 +1,104 @@
+/**
+ * Welcome Page Styles
+ */
+
+.welcome-container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.welcome-container .btn {
+    width: 233.93px;
+    height: 57.58px;
+    padding: 0;
+    border-radius: 34px;
+    background: linear-gradient(90deg, #8F64E1 0%, #1D68BD 100%);
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.welcome-container .btn:hover {
+    transform: translateY(-2px);
+}
+
+.welcome-container .btn:disabled {
+    opacity: 1;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.role-selection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.role-card {
+    text-align: left;
+    padding: var(--space-lg);
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 2px solid var(--color-border);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--color-white);
+    position: relative;
+    /* Needed for pseudo-element border */
+    background-clip: padding-box;
+    /* Ensures background doesn't bleed */
+}
+
+.role-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 
+ * Exact Figma Gradient Border Implementation 
+ * Using a pseudo-element to achieve gradient border with border-radius
+ */
+.role-card.card-selected {
+    border: 3px solid transparent;
+    /* Transparent border to hold space */
+    border-radius: 16px;
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        /* White background inside */
+        linear-gradient(to right, #7765DA, #1D68BD) border-box;
+    /* Gradient border */
+}
+
+.role-card h3 {
+    margin-bottom: var(--space-sm);
+    font-weight: var(--font-weight-semibold);
+    font-size: 20px;
+    color: var(--color-text-dark);
+}
+
+.role-card p {
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #454545;
+}
+
+@media (max-width: 768px) {
+    .role-selection {
+        grid-template-columns: 1fr;
+    }
+}

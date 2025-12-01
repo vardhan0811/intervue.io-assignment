@@ -1,0 +1,276 @@
+/**
+ * Poll Creation Form Styles
+ * Exact Figma design - squared corners, gray backgrounds, fixed button at bottom-right
+ */
+
+.poll-creation-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    padding-bottom: 100px;
+}
+
+/* Question Section */
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.question-header label {
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-dark);
+}
+
+.time-selector {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #F0F0F0;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+}
+
+.time-dropdown {
+    appearance: none;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    color: #7765DA;
+    cursor: pointer;
+    padding-right: 20px;
+    outline: none;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    right: 8px;
+    pointer-events: none;
+}
+
+.question-input-wrapper {
+    position: relative;
+}
+
+.question-input {
+    width: 100%;
+    min-height: 140px;
+    padding: var(--space-md);
+    background: #F5F5F5;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    font-family: var(--font-family);
+    font-size: 16px;
+    color: var(--color-text-dark);
+    resize: none;
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.question-input:focus {
+    background: #FAFAFA;
+    border-color: #D0D0D0;
+}
+
+.question-input::placeholder {
+    color: #B8B8B8;
+}
+
+.char-counter {
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    font-size: 14px;
+    color: #6E6E6E;
+}
+
+/* Options Section */
+.options-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.options-header label {
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-dark);
+}
+
+.correct-label {
+    margin-right: 40px;
+}
+
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.option-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.option-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #8F64E1 0%, #4E377B 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    flex-shrink: 0;
+}
+
+.option-input {
+    flex: 1;
+    padding: 14px 18px;
+    background: #F5F5F5;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    font-family: var(--font-family);
+    font-size: 16px;
+    color: var(--color-text-dark);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.option-input:focus {
+    background: #FAFAFA;
+    border-color: #D0D0D0;
+}
+
+.option-input::placeholder {
+    color: #B8B8B8;
+}
+
+.radio-group {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-custom {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #BDBDBD;
+    background: white;
+    position: relative;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-option input[type="radio"]:checked+.radio-custom {
+    border-color: #7765DA;
+    background: white;
+}
+
+.radio-option input[type="radio"]:checked+.radio-custom::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7765DA;
+}
+
+.radio-label {
+    font-size: 15px;
+    color: var(--color-text-dark);
+    user-select: none;
+    font-weight: var(--font-weight-regular);
+}
+
+/* Add Option Button */
+.add-option-btn {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid #7765DA;
+    border-radius: 8px;
+    color: #7765DA;
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.add-option-btn:hover {
+    background: rgba(119, 101, 218, 0.05);
+}
+
+/* Ask Question Button - Fixed at bottom-right with horizontal line */
+.ask-question-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 186px;
+    height: 58px;
+    background: linear-gradient(90deg, #8F64E1 0%, #5E4DBD 100%);
+    border: none;
+    border-radius: 34px;
+    color: white;
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(143, 100, 225, 0.3);
+    z-index: 100;
+}
+
+.ask-question-btn::before {
+    content: '';
+    position: fixed;
+    bottom: 120px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #E0E0E0;
+}
+
+.ask-question-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(143, 100, 225, 0.4);
+}
+
+.ask-question-btn:active {
+    transform: translateY(0);
+}
+
+.ask-question-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}

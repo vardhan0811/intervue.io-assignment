@@ -1,0 +1,19 @@
+/**
+ * Kicked Screen Styles
+ */
+
+.kicked-container {
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.kicked-icon {
+    font-size: 80px;
+    margin-bottom: var(--space-lg);
+    animation: pulse 2s infinite;
+}
+
+.kicked-container h1 {
+    color: var(--color-danger);
+}

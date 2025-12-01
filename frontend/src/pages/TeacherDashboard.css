@@ -1,0 +1,384 @@
+/**
+ * Teacher Dashboard Styles
+ * Matching reference design specifications
+ */
+
+.teacher-dashboard {
+    min-height: 100vh;
+    padding: var(--space-xl);
+    background: var(--color-white);
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.dashboard-main {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.dashboard-container {
+    max-width: calc(100vw - 160px);
+    width: 100%;
+    margin-left: 80px;
+}
+
+/* ==================== RESULTS VIEW - LEFT ALIGNED ==================== */
+
+.poll-section.poll-results-view {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.poll-history-header {
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    margin: 0;
+}
+
+.question-header-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.question-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0;
+}
+
+.results-container {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background: white;
+    container-type: inline-size;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ==================== INITIAL VIEW ==================== */
+
+.poll-section {
+    width: 100%;
+    max-width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.poll-section h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-dark);
+}
+
+.heading-regular {
+    font-weight: var(--font-weight-regular);
+}
+
+.heading-bold {
+    font-weight: var(--font-weight-bold);
+}
+
+.poll-section .subtitle {
+    font-size: 16px;
+    color: #9E9E9E;
+    line-height: 1.5;
+    margin-bottom: var(--space-xl);
+    max-width: 100%;
+}
+
+/* ==================== POLL HISTORY BUTTON ==================== */
+
+.btn-view-history {
+    background: linear-gradient(90deg, #7565D9 0%, #4D0ACD 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 26px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(95, 62, 184, 0.16);
+    transition: all 0.2s ease;
+}
+
+.btn-view-history:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(95, 62, 184, 0.24);
+}
+
+.btn-view-history svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ==================== HEADER BAR ==================== */
+
+.results-question-header {
+    background: #5D5D5D;
+    color: white;
+    padding: 0 24px;
+    font-size: 16px;
+    font-weight: 600;
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+/* ==================== OPTIONS LIST ==================== */
+
+.options-results-list {
+    background: white;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ==================== OPTION ROW ==================== */
+
+.option-bar {
+    position: relative;
+    height: 56px;
+    width: 100%;
+    background: #F9F9F9;
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.option-bar.highlighted {
+    border: 1px solid #6C5CE7;
+    background: #F5F3FF;
+}
+
+/* ==================== BADGE (Z-INDEX 10) ==================== */
+
+.results-option-number {
+    position: absolute;
+    left: 16px;
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #6C5CE7;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ==================== BASE CONTENT (BLACK TEXT) ==================== */
+
+.option-content-base {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 64px;
+    /* 16px left + 32px badge + 16px gap */
+    padding-right: 60px;
+    z-index: 1;
+}
+
+.option-content-base .option-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ==================== PROGRESS MASK (PURPLE BG + WHITE TEXT) ==================== */
+
+.option-progress-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #6C5CE7;
+    overflow: hidden;
+    z-index: 2;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.option-content-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100cqw;
+    /* Container Query Width - matches parent width exactly */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 64px;
+    padding-right: 60px;
+}
+
+.option-content-overlay .option-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ==================== PERCENTAGE (Z-INDEX 10) ==================== */
+
+.option-percentage {
+    position: absolute;
+    right: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    z-index: 10;
+}
+
+/* ==================== WAITING STATE ==================== */
+
+.waiting-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.waiting-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: var(--space-xl) 0;
+    gap: var(--space-sm);
+}
+
+.waiting-indicator p {
+    color: #8576FF;
+    font-size: 14px;
+}
+
+/* ==================== ASK NEW QUESTION BUTTON ==================== */
+
+.btn-ask-new {
+    background: #6C5CE7;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    height: 48px;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-ask-new:hover {
+    background: #5b4cc4;
+    transform: translateY(-1px);
+}
+
+/* ==================== RESPONSIVE - MOBILE ==================== */
+
+@media (max-width: 480px) {
+    .teacher-dashboard {
+        padding: var(--space-md);
+    }
+
+    .poll-section {
+        max-width: 100%;
+    }
+
+    .poll-section.poll-results-view {
+        margin-top: 60px;
+    }
+
+    .poll-section.poll-results-view .poll-history-header {
+        top: 16px;
+        right: 16px;
+    }
+
+    .results-container {
+        width: 92vw;
+    }
+
+    .poll-section.poll-results-view .question-title,
+    .poll-section.poll-results-view .results-container,
+    .poll-section.poll-results-view .button-container {
+        width: 92vw;
+    }
+
+    .results-question-header {
+        padding: 0 10px;
+        font-size: 14px;
+        height: 40px;
+    }
+
+    .options-results-list {
+        padding: 10px;
+    }
+
+    .option-bar {
+        height: 48px;
+        margin-bottom: 8px;
+    }
+
+    .results-option-number {
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+        left: 8px;
+    }
+
+    .option-content-base,
+    .option-content-overlay {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .option-content-base .option-name,
+    .option-content-overlay .option-name {
+        font-size: 14px;
+    }
+
+    .option-percentage {
+        font-size: 14px;
+        right: 8px;
+    }
+}

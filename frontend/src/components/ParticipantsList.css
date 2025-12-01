@@ -1,0 +1,107 @@
+/**
+ * Participants List Styles
+ */
+
+.participants-card {
+    position: sticky;
+    top: var(--space-lg);
+}
+
+.participants-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.participants-card-header h3 {
+    margin: 0;
+}
+
+.participants-content {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.students-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.student-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sm);
+    background: var(--color-bg-light);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.student-item:hover {
+    background: var(--color-white);
+    box-shadow: var(--shadow-light);
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex: 1;
+}
+
+.student-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h3);
+    flex-shrink: 0;
+}
+
+.student-details {
+    flex: 1;
+}
+
+.student-name {
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 2px;
+}
+
+.student-status {
+    color: var(--color-text-gray);
+}
+
+.text-success {
+    color: var(--color-success);
+    font-weight: var(--font-weight-semibold);
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    color: var(--color-text-gray);
+    font-size: 18px;
+    cursor: pointer;
+    padding: var(--space-xs);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    opacity: 0;
+}
+
+.student-item:hover .btn-remove {
+    opacity: 1;
+}
+
+.btn-remove:hover {
+    background: var(--color-danger);
+    color: var(--color-white);
+}

@@ -1,0 +1,388 @@
+/**
+ * Student Interface Styles
+ */
+
+.centered-layout {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: var(--space-xl);
+    background: var(--color-white);
+}
+
+.student-container {
+    max-width: 500px;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.student-container-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.student-container h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-dark);
+}
+
+.heading-regular {
+    font-weight: var(--font-weight-regular);
+}
+
+.heading-bold {
+    font-weight: var(--font-weight-bold);
+}
+
+.student-description {
+    max-width: 520px;
+    line-height: 1.6;
+}
+
+.text-gray {
+    color: #9E9E9E;
+    line-height: 1.5;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(108, 92, 231, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--color-primary);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.name-form {
+    margin-top: var(--space-xl);
+    width: 100%;
+}
+
+.name-form-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+}
+
+.name-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-xs);
+    align-self: flex-start;
+    width: 100%;
+}
+
+.name-form input {
+    width: 100%;
+    padding: 14px 18px;
+    background: #F5F5F5;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 16px;
+    color: var(--color-text-dark);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.name-form input:focus {
+    background: #FAFAFA;
+    border-color: #D0D0D0;
+}
+
+.name-form input::placeholder {
+    color: #B8B8B8;
+}
+
+.name-form button {
+    width: 170px;
+    height: 48px;
+    background: linear-gradient(90deg, #8F64E1 0%, #5E4DBD 100%);
+    border: none;
+    border-radius: 24px;
+    color: white;
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(143, 100, 225, 0.3);
+    margin-top: var(--space-md);
+}
+
+.name-form button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(143, 100, 225, 0.4);
+}
+
+.name-form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Active Poll */
+.student-poll-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.poll-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.poll-header h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0;
+}
+
+.question-card {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: var(--space-lg);
+}
+
+.question-box {
+    background: var(--color-text-dark);
+    color: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+}
+
+.question-text {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-semibold);
+    margin: 0;
+    color: var(--color-white);
+}
+
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-bg-light);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.option-item:hover {
+    border-color: var(--color-primary);
+    background: var(--color-white);
+}
+
+.option-item.selected {
+    border-color: var(--color-primary);
+    background: rgba(108, 92, 231, 0.05);
+}
+
+.option-text {
+    font-size: var(--font-size-body);
+    color: var(--color-text-dark);
+}
+
+.option-number-badge {
+    width: 36px;
+    height: 36px;
+    background: #9E9E9E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.option-item.selected .option-number-badge {
+    background: linear-gradient(90deg, #8F64E1 0%, #7856D8 100%);
+}
+
+.submit-row {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.btn-submit-answer {
+    width: 170px;
+    height: 52px;
+    background: linear-gradient(90deg, #8F64E1 0%, #5E4DBD 100%);
+    border: none;
+    border-radius: 26px;
+    color: white;
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(143, 100, 225, 0.3);
+}
+
+.btn-submit-answer:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(143, 100, 225, 0.4);
+}
+
+.btn-submit-answer:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Results View */
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    container-type: inline-size;
+}
+
+.result-option-row {
+    position: relative;
+    height: 56px;
+    width: 100%;
+    background: #F9F9F9;
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.result-option-row.highlighted {
+    border: 1px solid #6C5CE7;
+    background: #F5F3FF;
+}
+
+/* Badge - Shared with active poll but positioned absolutely in results */
+.result-option-row .option-number-badge {
+    position: absolute;
+    left: 16px;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Base Layer (Black Text) */
+.option-content-base {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 64px;
+    padding-right: 60px;
+    z-index: 1;
+}
+
+.option-content-base .option-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Progress Mask Layer (Purple BG + White Text) */
+.option-progress-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #6C5CE7;
+    overflow: hidden;
+    z-index: 2;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.option-content-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100cqw;
+    /* Matches container width */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 64px;
+    padding-right: 60px;
+}
+
+.option-content-overlay .option-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Percentage */
+.result-percentage {
+    position: absolute;
+    right: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    z-index: 10;
+}
+
+.wait-message-box {
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+.wait-message-box p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+@media (max-width: 768px) {
+    .student-container h2 {
+        font-size: 28px;
+    }
+
+    .centered-layout {
+        padding: var(--space-lg);
+    }
+
+    .name-form button {
+        width: 100%;
+    }
+}
